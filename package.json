@@ -1,0 +1,21 @@
+{
+  "devDependencies": {
+    "@types/mocha": "^10.0.8",
+    "cypress": "^13.15.0",
+    "dotenv": "^16.4.5",
+    "typescript": "^5.6.2"
+  },
+  "scripts": {
+    "cyopen": "cypress open"
+  },
+  "dependencies": {
+    "eslint-plugin-cypress": "^3.5.0"
+  },
+  "name": "legalmatchtests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
