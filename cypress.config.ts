@@ -5,7 +5,7 @@ dotenv.config();
 
 export default defineConfig({
   env: {
-    baseUrl: process.env.STAGING_URL, 
+    baseUrl: process.env.URL, 
     username: process.env.USERNAME,
     password: process.env.PASSWORD,
   },

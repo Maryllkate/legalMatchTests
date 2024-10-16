@@ -27,21 +27,6 @@ import '../support/e2e.ts'
 
 const baseUrl = Cypress.env('baseUrl');
 
-Cypress.Commands.add('visitLoginPage', () => {
-    cy.visit(`${baseUrl}/login`);
+Cypress.Commands.add('visitDemoPage', () => {
+    cy.visit(`${baseUrl}/demo.html#`);
   });
-
-  Cypress.Commands.add('userLogin', () => {
-    const username = Cypress.env('username');
-    const password = Cypress.env('password');
-    cy.get('#validationUsername').type(`${username}`);
-    cy.get('#validationPassword').type(`${password}`);
-  });
-  
-Cypress.Commands.add('clickLogin', () => {
-    cy.get('button[type="submit"]').click();
-});
-
-Cypress.Commands.add('visitDashboardPage', () => {
-    cy.visit(`${baseUrl}/dashboard/analytics`);
-});
