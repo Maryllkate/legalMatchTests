@@ -6,8 +6,7 @@ dotenv.config();
 export default defineConfig({
   env: {
     baseUrl: process.env.URL, 
-    username: process.env.USERNAME,
-    password: process.env.PASSWORD,
+    chromeWebSecurity: false, // Disable mixed content blocking
   },
   e2e: {
     setupNodeEvents(on, config) {

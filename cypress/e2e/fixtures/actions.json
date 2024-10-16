@@ -1,0 +1,32 @@
+{
+    "interaction": [
+        "draggable",
+        "droppable",
+        "sortable",
+        "resizable",
+        "selectable",
+        "clickable",
+        "double-clickable",
+        "hoverable",
+        "focusable",
+        "blur",
+        "keypress",
+        "keyup",
+        "keydown"
+    ],
+    "widget": [
+        "accordion",
+        "datepicker",
+        "dialog",
+        "slider",
+        "tabs",
+        "tooltip",
+        "progressbar",
+        "menu",
+        "spinner",
+        "treeview",
+        "modal",
+        "carousel",
+        "popover"
+    ]
+}

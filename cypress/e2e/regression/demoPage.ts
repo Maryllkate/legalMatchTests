@@ -3,5 +3,9 @@ describe('visit automation demo page', () => {
     it('should load the page', () => {
         //check the command.ts under support
         cy.visitDemoPage();
+        cy.uncaughtError();
     });
+});
+describe('', () => {
+    
 });

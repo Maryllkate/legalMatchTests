@@ -19,3 +19,10 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
+Cypress.on('uncaught:exception', (err) => {
+    // Prevent Cypress from failing the test on mixed content errors
+    if (err.message.includes('Mixed Content')) {
+        return false;
+    }
+});
+
