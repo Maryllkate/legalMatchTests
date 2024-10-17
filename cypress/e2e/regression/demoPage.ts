@@ -129,7 +129,9 @@ describe('enroll in the Course', () => {
       });
 });
 describe('click Enroll to Course Button', () => {
-    cy.clickEnrollToCourseButton();
+    it('should click the Enroll Course button', () => {
+        cy.clickEnrollToCourseButton();
+    });
 });
 describe('verify Order Summary Page', () => {
     it('should fill out the Order Summary Page', () => {
