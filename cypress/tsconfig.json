@@ -5,7 +5,9 @@
       "types": ["cypress", "node"],
       "module": "commonjs",
       "moduleResolution": "node",
-      "preserveValueImports": false
+      "preserveValueImports": false,
+      "resolveJsonModule": true,
+      "outDir": "./dist"
     },
     "include": ["**/*.ts", "cypress/**/*.ts"],
     "exclude": ["cypress.config.ts", "node_modules"]
