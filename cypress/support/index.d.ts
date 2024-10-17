@@ -11,5 +11,13 @@ declare namespace Cypress {
       fillUpForm: (Data) => void;
       clickFreeLifetimeMembership: () => void;
       scrollToCarousel: () => void;
+      verifySpecificSlideInCarousel: (text: string) => void;
+      goToNextSlide: () => void;
+      clickGetStarted: () => void;
+      processPayment: () => void;
+      clickEnrollToCourseButton: () => void;
+      orderSummary: () => void;
+      personalInformation: () => void;
+      checkoutButton: () => void;
     }
   }

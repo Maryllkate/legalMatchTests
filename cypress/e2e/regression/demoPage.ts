@@ -93,3 +93,53 @@ describe('scroll to the `30+ Courses video library FREE ACCESS`', () => {
     });
 });
 
+describe('Navigate to `Automation Architect Selenium with 7 live projects`', () => {
+    const url = 'https://www.way2automation.com/lifetime-membership-club/'
+    const carousel = 'Automation Architect Selenium with 7 live projects';
+
+    beforeEach(() => {
+        cy.visit(url);
+    });
+
+    it('Automation Architect Selenium with 7 live projects Slide', () => {
+        cy.setTimeout(5);
+        cy.verifySpecificSlideInCarousel(carousel);
+    });
+    //needs to have a specific time durations for carousel
+    it('should navigate to the Automation Architect Selenium slide and validate it', () => {
+        cy.setTimeout(5);
+        cy.goToNextSlide(); 
+        cy.setTimeout(20);
+        cy.verifySpecificSlideInCarousel(carousel);
+      });
+    it('should click the Get Started Button', () => {
+        cy.verifySpecificSlideInCarousel(carousel);
+        cy.clickGetStarted();
+    });
+});
+describe('enroll in the Course', () => {
+    const url = 'https://www.selenium-tutorial.com/p/automation-architect-in-selenium-7-live-projects';
+
+    beforeEach(() => {
+        cy.visit(url);
+      });
+      it('should select the PAY IN USD payment option', () => {
+        cy.processPayment();
+        cy.get('#product_id_4632690').should('be.checked');
+      });
+});
+describe('click Enroll to Course Button', () => {
+    cy.clickEnrollToCourseButton();
+});
+describe('verify Order Summary Page', () => {
+    it('should fill out the Order Summary Page', () => {
+       cy.orderSummary();
+    });
+    it('should full name & address', () => {
+        cy.personalInformation();
+    });
+    it('click checkout button', () => {
+        cy.checkoutButton();
+    });
+});
+

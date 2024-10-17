@@ -11,7 +11,7 @@ const baseUrl = Cypress.env('baseUrl');
   });
 
   Cypress.Commands.add("setTimeout", (duration: number) => {
-    if (![5, 10, 15].includes(duration)) {
+    if (![5, 10, 15, 20].includes(duration)) {
       throw new Error("Invalid duration. Choose 5, 10, or 15 seconds.");
     }
   
@@ -121,4 +121,85 @@ const baseUrl = Cypress.env('baseUrl');
       .scrollIntoView()
       .should('be.visible');
     cy.setTimeout(5);
+  });
+
+  //next slide
+  Cypress.Commands.add('goToNextSlide', () => {
+    cy.get('.swiper-button-next').click();
+  });
+
+  Cypress.Commands.add('verifySpecificSlideInCarousel', (text: string) => {
+    cy.get('.swiper-slide')
+    .contains(text)
+    .parents('.swiper-slide')
+    .should('be.visible')
+    .and('have.class');
+  });
+  
+  Cypress.Commands.add('clickGetStarted', () => {
+    cy.get('a.pp-info-box-button.elementor-button')
+      .contains('Get Started')
+      .click();
+    cy.url().should('include', 'https://www.selenium-tutorial.com/p/automation-architect-in-selenium-7-live-projects');
+  });
+
+  Cypress.Commands.add('processPayment', () => {
+    cy.get('label.checkout-button-group.product_4632690')
+    .contains('PAY IN USD')
+    .should('be.visible')
+    .click();
+  });
+
+  Cypress.Commands.add('clickEnrollToCourseButton', () => {
+    cy.get('button#enroll-button')
+    .should('contain', 'Enroll in Course')
+    .click();
+
+    // After clicking, verify the text changes to "Processing..."
+    cy.get('button#enroll-button')
+      .should('contain', 'Processing...'); // Verify the button text changes
+  });
+
+  Cypress.Commands.add('orderSummary',() => {
+    cy.setTimeout(5);
+    //email address
+    cy.get('input#emailAddress')
+    .clear()
+    .type('e2e.regression123@gmail.com');
+    //card payment
+    cy.setTimeout(5);
+    cy.get('input#Field-numberInput')
+    .clear()
+    .type('4242424242424242');
+    //expiry
+    cy.setTimeout(5);
+    cy.get('input#Field-expiryInput')
+    .clear()
+    .type('1126');
+    //cvc
+    cy.setTimeout(5);
+    cy.get('input#Field-cvcInput')
+    .clear()
+    .type('111');
+  });
+
+  Cypress.Commands.add('personalInformation', () => {
+    //fullname
+    cy.get('input#Field-nameInput')
+    .clear()
+    .type('test test');
+    //address
+    cy.get('input#Field-addressLine1Input')
+    .clear()
+    .type('123 Sen. Gil J. Puyat Avenue')
+    .click(); 
+    //postal code
+    cy.get('input#Field-postalCodeInput')
+    .clear()
+    .type('4024');
+  });
+
+  Cypress.Commands.add('checkoutButton', () => {
+    cy.get('button[data-testid="buynow-button"]')
+    .click();
   });
