@@ -160,6 +160,7 @@ const baseUrl = Cypress.env('baseUrl');
       .should('contain', 'Processing...'); // Verify the button text changes
   });
 
+  //no access to its backend configuration thats why the test data here is hardcoded
   Cypress.Commands.add('orderSummary',() => {
     cy.setTimeout(5);
     //email address
