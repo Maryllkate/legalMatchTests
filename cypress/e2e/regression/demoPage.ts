@@ -52,9 +52,10 @@ describe('validate Widget Category', () => {
     });
 });
 describe('validate Dynamic Element in Category', () => {
-    it('shoud check the dynamic element', () => {
+    it('should check the dynamic element', () => {
         cy.validateDynamicElement('Submit Button Clicked').then((url) => {
             cy.log(url);
+            cy.setTimeout(15);
             expect(url).to.equal('http://www.qa.way2automation.com/');
         });
     });
@@ -62,7 +63,7 @@ describe('validate Dynamic Element in Category', () => {
 describe('visit Dynamic Element url', () => {
     it('visits the link for Submit Button Clicked', () => {
         cy.visit({
-            url: 'http://www.qa.way2automation.com',
+            url: `'http://www.qa.way2automation.com'`,
             method: 'POST'
         });
     });
@@ -72,6 +73,28 @@ describe('visit Registration Form', () => {
         cy.visitRegistrationForm();
     });
     it('should fill up the information', () => {
-        cy.fillUpForm();
+        it('should fill out the registration form and submit', () => {
+            const Data = {
+                name: 'John Doe',
+                phone: '09123456789',
+                email: 'john.doe@example.com',
+                city: 'Manila',
+                username: 'johndoe',
+                password: 'securePassword123'
+            };
+            cy.fillUpForm(Data);
+        });
+    });
+});
+describe('click Free Lifetime Membership', () => {
+    it('should click the Free lifetime membership button', () => {
+        cy.setTimeout(10);
+        cy.clickFreeLifetimeMembership();
+    });
+});
+describe('scroll to the `30+ Courses video library FREE ACCESS`', () => {
+    it('should scroll into the carousel feature', () => {
+        cy.setTimeout(10);
+        cy.scrollToCarousel();
     });
 });
