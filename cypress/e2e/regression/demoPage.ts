@@ -19,7 +19,7 @@ describe('validate Interaction Link', () => {
         cy.validateInteractionLink('Droppable');
     });
     it('should check the resizeable link', () => {
-        cy.validateInteractionLink('Resizeable');
+        cy.validateInteractionLink('Resizable');
     });
     it('should check the selectable link', () => {
         cy.validateInteractionLink('Selectable');

@@ -7,9 +7,10 @@
       "moduleResolution": "node",
       "preserveValueImports": false,
       "resolveJsonModule": true,
-      "outDir": "./dist"
+      "outDir": "./dist",
+      "esModuleInterop": true,
+      "skipLibCheck": true,
     },
     "include": ["**/*.ts", "cypress/**/*.ts"],
     "exclude": ["cypress.config.ts", "node_modules"]
 }
-  
