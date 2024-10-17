@@ -6,12 +6,12 @@ describe('visit automation demo page', () => {
         cy.uncaughtError();
     });
 });
-describe('validate Home Link', () => {
+describe('validate Home Category', () => {
     it('should check the home link', () => {
         cy.validateHomeLink();
     });
 });
-describe('validate Interaction Link', () => {
+describe('validate Interaction Category', () => {
     it('should check the draggable link', () => {
         cy.validateInteractionLink('Draggable');
     });
@@ -28,7 +28,7 @@ describe('validate Interaction Link', () => {
         cy.validateInteractionLink('Sortable');
     });
 });
-describe('validate Widget Link', () => {
+describe('validate Widget Category', () => {
     it('should check the accordion link', () => {
         cy.validateWidgetLink('Accordion');
     });
@@ -49,5 +49,29 @@ describe('validate Widget Link', () => {
     });
     it('should check the tooltip link', () => {
         cy.validateWidgetLink('Tooltip');
+    });
+});
+describe('validate Dynamic Element in Category', () => {
+    it('shoud check the dynamic element', () => {
+        cy.validateDynamicElement('Submit Button Clicked').then((url) => {
+            cy.log(url);
+            expect(url).to.equal('http://www.qa.way2automation.com/');
+        });
+    });
+});
+describe('visit Dynamic Element url', () => {
+    it('visits the link for Submit Button Clicked', () => {
+        cy.visit({
+            url: 'http://www.qa.way2automation.com',
+            method: 'POST'
+        });
+    });
+});
+describe('visit Registration Form', () => {
+    it('should visit the Dummy Registration Form', () => {
+        cy.visitRegistrationForm();
+    });
+    it('should fill up the information', () => {
+        cy.fillUpForm();
     });
 });
