@@ -7,18 +7,12 @@
       "Sortable"
   ],
   "widget": [
-      "accordion",
-      "datepicker",
-      "dialog",
-      "slider",
-      "tabs",
-      "tooltip",
-      "progressbar",
-      "menu",
-      "spinner",
-      "treeview",
-      "modal",
-      "carousel",
-      "popover"
+      "Accordion",
+      "Autocomplete",
+      "Datepicker",
+      "Menu",
+      "Slider",
+      "Tabs",
+      "Tooltip"
   ]
 }

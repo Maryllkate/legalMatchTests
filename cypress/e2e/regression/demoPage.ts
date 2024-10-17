@@ -28,3 +28,26 @@ describe('validate Interaction Link', () => {
         cy.validateInteractionLink('Sortable');
     });
 });
+describe('validate Widget Link', () => {
+    it('should check the accordion link', () => {
+        cy.validateWidgetLink('Accordion');
+    });
+    it('should check the autocomplete link', () => {
+        cy.validateWidgetLink('Autocomplete');
+    });
+    it('should check the datepicker link', () => {
+        cy.validateWidgetLink('Datepicker');
+    });
+    it('should check the menu link', () => {
+        cy.validateWidgetLink('Menu');
+    });
+    it('should check the slider link', () => {
+        cy.validateWidgetLink('Slider');
+    });
+    it('should check the tabs link', () => {
+        cy.validateWidgetLink('Tabs');
+    });
+    it('should check the tooltip link', () => {
+        cy.validateWidgetLink('Tooltip');
+    });
+});

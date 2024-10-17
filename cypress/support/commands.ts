@@ -32,6 +32,16 @@ Cypress.Commands.add('visitDemoPage', () => {
   } else {
       throw new Error(`Action "${actionName}" not found in actions.json`);
   }
-  })
+  });
 
-  
+  Cypress.Commands.add('validateWidgetLink', (widgetName) => {
+    const action = actions.widget.find((a: string) => a === widgetName);
+    if (action) {
+      //due to display:none the visibility should have this command
+      cy.get('li > a').contains('Interaction').trigger('mouseover');
+      // Clicking the link that matches the action name with force option
+      cy.get('li > ul.dropdown > li > a').contains(widgetName).click({ force: true });
+  } else {
+      throw new Error(`Action "${widgetName}" not found in actions.json`);
+  }
+  });
