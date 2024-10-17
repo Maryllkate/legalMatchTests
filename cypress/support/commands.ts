@@ -74,3 +74,7 @@ Cypress.Commands.add('visitDemoPage', () => {
       }
     })
   });
+
+  Cypress.Commands.add('fillUpForm', () => {
+    
+  })
