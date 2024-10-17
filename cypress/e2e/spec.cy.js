@@ -9,6 +9,6 @@ describe('template spec', () => {
  * git init -y
  * npm install (for node modules)
  * in terminal run: npm run cyopen 
- * 
+ * or you can run: npm run cyrun (without GUI)
  * 
  */
