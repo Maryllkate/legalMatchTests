@@ -5,5 +5,8 @@ declare namespace Cypress {
       validateHomeLink: () => void;
       validateInteractionLink: (actionName: string) => void;
       validateWidgetLink:(widgetName: string) => void;
+      validateDynamicElement: (elementText: string) => Chainable<string>;
+      visitRegistrationForm: () => void;
+      fillUpForm: () => void;
     }
   }

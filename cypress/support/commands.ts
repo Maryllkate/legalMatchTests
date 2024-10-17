@@ -45,3 +45,32 @@ Cypress.Commands.add('visitDemoPage', () => {
       throw new Error(`Action "${widgetName}" not found in actions.json`);
   }
   });
+
+  Cypress.Commands.add('validateDynamicElement', (elementText) => {
+    cy.get('li > .dropdown > li > a')
+      .contains(elementText)
+      .then($el => {
+        // Get the href attribute
+        const url = $el.prop('href');
+        cy.wrap(url); // Wrap the URL to chain
+      });
+  });
+
+  /**
+   * example for the backend API validation that I mentioned during my interview 
+   * with sir axion, sir raoul and sir noah
+   */
+  Cypress.Commands.add('visitRegistrationForm', () => {
+    cy.request({
+      url: 'https://way2automation.com/way2auto_jquery/index.php',
+      method: 'GET',
+    }).then((response) => {
+      //Validating the Status Code
+      if(response.status === 200) { //exactly equal to 200 from the API response
+        cy.visit('https://way2automation.com/way2auto_jquery/index.php');
+      } else {
+        cy.log(`Failed ${response.status}`)
+        throw new Error(`Unexpected status code: ${response.status}`); // throw an exception error
+      }
+    })
+  });
