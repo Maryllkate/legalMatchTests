@@ -101,6 +101,7 @@ const baseUrl = Cypress.env('baseUrl');
   });
   });
 
+  //not recommending to end up using this, doesn't have a choice
   Cypress.Commands.add('clickFreeLifetimeMembership', () => {
     cy.get('button#trigger-popup')
       .contains('EXPLORE LIFETIME MEMBERSHIP')

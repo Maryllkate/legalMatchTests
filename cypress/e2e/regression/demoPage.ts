@@ -52,7 +52,7 @@ describe('validate Widget Category', () => {
     });
 });
 describe('validate Dynamic Element in Category', () => {
-    it('should check the dynamic element', () => {
+    it('should visit the dynamic element', () => {
         cy.validateDynamicElement('Submit Button Clicked').then((url) => {
             cy.log(url);
             cy.setTimeout(15);
@@ -60,14 +60,7 @@ describe('validate Dynamic Element in Category', () => {
         });
     });
 });
-describe('visit Dynamic Element url', () => {
-    it('visits the link for Submit Button Clicked', () => {
-        cy.visit({
-            url: `'http://www.qa.way2automation.com'`,
-            method: 'POST'
-        });
-    });
-});
+
 describe('visit Registration Form', () => {
     it('should visit the Dummy Registration Form', () => {
         cy.visitRegistrationForm();
@@ -86,15 +79,17 @@ describe('visit Registration Form', () => {
         });
     });
 });
+//an ads(chatbox) is popping up during testing here that is why it fails
 describe('click Free Lifetime Membership', () => {
     it('should click the Free lifetime membership button', () => {
-        cy.setTimeout(10);
+        cy.setTimeout(5);
         cy.clickFreeLifetimeMembership();
     });
-});
+}); 
 describe('scroll to the `30+ Courses video library FREE ACCESS`', () => {
     it('should scroll into the carousel feature', () => {
         cy.setTimeout(10);
         cy.scrollToCarousel();
     });
 });
+
