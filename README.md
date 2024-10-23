@@ -9,7 +9,8 @@
       URL = 'https://www.way2automation.com'
       USERNAME = ''
       PASSWORD = ''
-* for .gitignore file insert this
+   
+* for .gitignore file insert this:
       .env
       node_modules
       .DS_Store
